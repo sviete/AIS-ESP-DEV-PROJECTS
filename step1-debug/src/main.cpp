@@ -5,17 +5,17 @@ int myFunction(int, int);
 
 void setup() {
   // put your setup code here, to run once:
-  int result = myFunction(2, 3);
-  printf("OK");
+  printf("setup");
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  printf("loop");  
+  printf("in main loop");  
   printf("OK");
   printf("OK");
   printf("OK");
-  sleep(2);
+  int z = myFunction(1,2);
+  sleep(20);
 }
 
 // put function definitions here:

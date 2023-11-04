@@ -3,27 +3,28 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu
 RUN apt update \
     && apt upgrade -y \
     && apt -qqy install \
-    bc \
-    sudo \ 
-    build-essential \
-    ca-certificates \
-    clang \
-    curl \
-    gcc \
-    git \
-    libusb-1.0-0 \
-    python3.10-venv \
-    python2 \
-    python2-dev \
+    git \ 
+    wget \
+    flex \
+    bison \
+    gperf \
     python3 \
-    python3-dev \
-    python3-distutils \
     python3-pip \
-    python3-setuptools \
-    srecord \
-    udev \
-    xz-utils 
+    python3-venv \
+    cmake \
+    ninja-build \
+    ccache \
+    libffi-dev \
+    libssl-dev \
+    dfu-util \
+    libusb-1.0-0
 
+RUN mkdir -p ~/esp
+RUN cd ~/esp
+RUN git clone -b v5.1.1 --recursive https://github.com/espressif/esp-idf.git
+RUN cd ~/esp/esp-idf
+RUN ./install.sh all
+RUN . $HOME/esp/esp-idf/export.sh           
 
 RUN curl -fLo /etc/udev/rules.d/99-platformio-udev.rules --create-dirs https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/system/99-platformio-udev.rules
 

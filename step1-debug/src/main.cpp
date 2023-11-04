@@ -10,12 +10,9 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  printf("in main loop");  
-  printf("OK");
-  printf("OK");
-  printf("OK");
-  int z = myFunction(1,2);
-  sleep(20);
+  printf("loop");  
+  printf("OK\n");
+  delay(1000);
 }
 
 // put function definitions here:

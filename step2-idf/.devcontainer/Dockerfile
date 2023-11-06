@@ -19,12 +19,12 @@ RUN apt update \
     dfu-util \
     libusb-1.0-0
 
-RUN mkdir -p ~/esp
-RUN cd ~/esp
-RUN git clone -b v5.1.1 --recursive https://github.com/espressif/esp-idf.git
-RUN cd ~/esp/esp-idf
-RUN ./install.sh all
-RUN . $HOME/esp/esp-idf/export.sh           
+RUN mkdir -p ~/esp \
+    && cd ~/esp \
+    && git clone -b v5.1.1 --recursive https://github.com/espressif/esp-idf.git \
+    && cd esp-idf \
+    && ./install.sh all \
+    && . $HOME/esp/esp-idf/export.sh           
 
 RUN curl -fLo /etc/udev/rules.d/99-platformio-udev.rules --create-dirs https://raw.githubusercontent.com/platformio/platformio-core/develop/platformio/assets/system/99-platformio-udev.rules
 

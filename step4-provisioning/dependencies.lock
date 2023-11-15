@@ -1,0 +1,15 @@
+dependencies:
+  idf:
+    component_hash: null
+    source:
+      type: idf
+    version: 5.1.1
+  jsmn:
+    component_hash: null
+    source:
+      path: /home/andrzej/Projects/AIS-ESP-DEV-PROJECTS/step4-provisioning/components/jsmn
+      type: local
+    version: 1.1.0
+manifest_hash: 421b8ce09cc17c7152f741b32627987c11952e0679abd21e63a766df2f792aa0
+target: esp32s3
+version: 1.0.0
